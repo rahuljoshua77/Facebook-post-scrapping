@@ -28,6 +28,13 @@ dc['loggingPrefs'] = {'driver': 'OFF', 'server': 'OFF', 'browser': 'OFF'}
 opts.add_argument('--ignore-ssl-errors=yes')
 opts.add_argument("--start-maximized")
 opts.add_argument('--ignore-certificate-errors')
+opts.add_argument("--disable-infobars")
+opts.add_argument("--disable-extensions")
+
+# Pass the argument 1 to allow and 2 to block
+opts.add_experimental_option(
+    "prefs", {"profile.default_content_setting_values.notifications": 1}
+)
 opts.add_argument("--window-size=500,800")
 opts.add_argument('--disable-blink-features=AutomationControlled')
 opts.add_experimental_option('excludeSwitches', ['enable-logging'])
