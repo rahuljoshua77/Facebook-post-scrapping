@@ -109,6 +109,9 @@ def main(year, keyword,limit):
                 sleep(5)
                 name_post = scrape_name(index).text
                 name_post = name_post.strip().split('·')[0]
+                name_post = re.sub(r"\n", " ", name_post)
+                name_post = re.sub(r"\t", " ", name_post)
+                name_post = re.sub(r"\s+", " ", name_post)
                 print(name_post)
                 sleep(10)
                 date_img = scrape_date(index).screenshot("date.png")
